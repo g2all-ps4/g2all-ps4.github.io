@@ -1,0 +1,115 @@
+:root {
+    --page-pad: clamp(10px, 2.5vw, 28px);
+    --brand-pad: clamp(7px, 1.2vw, 12px);
+    --brand-size: clamp(22px, 2.2vw, 34px);
+    --brand-gap: clamp(6px, 0.8vw, 10px);
+    --brand-font: clamp(13px, 1.25vw, 18px);
+    --message-size: clamp(14px, 1.55vw, 22px);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #0b0d10;
+    color: #c8ced8;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+body {
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+#brand {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(var(--brand-size) + (var(--brand-pad) * 2));
+    padding: var(--brand-pad) var(--page-pad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--brand-gap);
+    background: #0e1116;
+    border-bottom: 1px solid #1e2732;
+}
+
+#brand img {
+    width: var(--brand-size) !important;
+    height: var(--brand-size) !important;
+    flex: 0 0 var(--brand-size);
+    margin: 0 !important;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+#brand b {
+    font-size: var(--brand-font);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: #e6ebf2;
+    white-space: nowrap;
+}
+
+#wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(18px, 4vh, 42px) var(--page-pad);
+    text-align: center;
+}
+
+#msgs {
+    box-sizing: border-box;
+    display: block;
+    width: min(92vw, 1100px);
+    max-width: 100%;
+    margin: 0 auto !important;
+    padding: 0;
+    text-align: center !important;
+    font-size: var(--message-size) !important;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #c8ced8;
+    text-shadow: none;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+a { text-decoration: none; }
+
+#progress, #menu, #crypto, #tools, #lnx, #mods { display: none; }
+
+.btn {
+    background-color: #003263;
+    color: white;
+    width: min(227px, 80vw);
+    height: clamp(40px, 4vw, 46px);
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: clamp(16px, 1.4vw, 20px);
+    margin: 8px 5px;
+    border-style: none;
+    transition-duration: .4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover { background-color: #0069d9; }
+.btn-onln { background-color: #076300; }
+.btn-onln:hover { background-color: #18891b; }
+.btn-toolbox { background-color: #ae2301; }
+.btn-toolbox:hover { background-color: #d42a01; }
+.btn-multi { background-color: #b8860b; }
+.btn-multi:hover { background-color: #daa520; }
+
+@media (max-width: 480px) {
+    #brand b { letter-spacing: .1em; }
+    #msgs { width: 94vw; }
+}
